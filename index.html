@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah BG Foto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>UBAH BG FOTO</h1>
+        <p>Web ini menyediakan fitur ubah background latar belakang foto, Kamu cukup upload foto kamu maka otomatis foto kamu akan berubah backgroundnya dan kamu bisa memilih warna background yang kamu mau. By: Rifan</p>
+        <p>disclaimer jika saat upload foto dan hasil tidak di temukan atau hasil tidak muncul kemungkinan token anda habis</p>
+        <form id="uploadForm">
+            <label for="fileInput" id="fileLabel">Upload Foto Anda:</label>
+            <input type="file" id="fileInput" accept="image/*" required style="display: none;">
+            <button type="button" id="fileButton">Upload File</button>
+            
+            <label for="bgColor">BACKGROUND COLOR:</label>
+            <input type="color" id="bgColor" required>
+            
+            <label for="photoSize">Pilih Ukuran Foto:</label>
+            <select id="photoSize" required>
+                <option value="2x3">2x3</option>
+                <option value="3x4">3x4</option>
+                <option value="4x6">4x6</option>
+            </select>
+            
+            <button type="submit" id="processButton">Proses</button>
+        </form>
+        
+        <div id="loading" style="display: none;">
+            <h2>Loading</h2>
+            <div id="loadingBar">[          ]</div>
+        </div>
+
+        <div id="result" style="display: none;">
+            <h2>Hasil:</h2>
+            <canvas id="canvas"></canvas>
+            <button id="downloadButton">Download Gambar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
